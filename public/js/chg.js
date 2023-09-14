@@ -26,3 +26,20 @@ $(function() {
         })
     });
 });
+
+// Switch between login and registration tabs
+$(document).ready(function() {
+    $('#login-tab').click(function() {
+        $('#login-tab').addClass('active');
+        $('#register-tab').removeClass('active');
+        $('#login').addClass('show active');
+        $('#register').removeClass('show active');
+    });
+
+    $('#register-tab').click(function() {
+        $('#register-tab').addClass('active');
+        $('#login-tab').removeClass('active');
+        $('#register').addClass('show active');
+        $('#login').removeClass('show active');
+    });
+});

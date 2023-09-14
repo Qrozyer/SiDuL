@@ -6,6 +6,7 @@
     <meta name="author" content="qrozyer">
     <title><?= WEB_TITTLE ; ?></title>
     <link href="<?= BASEURL ; ?>/css/bootstrap.css" rel="stylesheet">    
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
     <link rel="shortcut icon" href="<?= BASEURL ; ?>/img/R.png">    
     <style>
         a{
@@ -55,13 +56,13 @@
             <ul class="navbar-nav">
             <li class="nav-item">
                 <a class="nav-link active" aria-current="page" href="<?= BASEURL ; ?>">Home</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="<?= BASEURL ; ?>/todo">Todo</a>
-            </li>
+            </li>          
             <li class="nav-item">
                 <a class="nav-link" href="<?= BASEURL ; ?>/profile">Profile</a>
             </li>        
+            <li class="nav-item">
+                <a class="nav-link" href="<?= BASEURL ; ?>/user/logout">Logout</a>
+            </li>  
             </ul>
         </div>
     </div>

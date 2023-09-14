@@ -14,10 +14,10 @@ class schedules {
     } 
 
     public function create($data){
-        $schedule = $data['schedule'];
-        $priority = $data['priority'];
-        $date = $data['date'];
-        $user_id = $data['user_id'];        
+        $schedule = strip_tags(htmlentities($data['schedule']));
+        $priority = strip_tags(htmlentities($data['priority']));
+        $date = strip_tags(htmlentities($data['date']));
+        $user_id = strip_tags(htmlentities($data['user_id']));        
         $create = "INSERT INTO $this->table (schedule, priority, date, user_id) VALUES (:schedule,:priority,:date,:user_id)";
         $this->db->query($create);
         $this->db->bind(':schedule', $schedule);
@@ -37,11 +37,11 @@ class schedules {
     }
 
     public function update($data){
-        $id = $data['schedule_id'];
-        $schedule = $data['schedule'];
-        $priority = $data['priority'];
-        $date = $data['date'];
-        $user_id = $data['user_id'];        
+        $id = strip_tags(htmlentities($data['schedule_id']));
+        $schedule = strip_tags(htmlentities($data['schedule']));
+        $priority = strip_tags(htmlentities($data['priority']));
+        $date = strip_tags(htmlentities($data['date']));
+        $user_id = strip_tags(htmlentities($data['user_id']));         
         $update = "UPDATE $this->table SET schedule = :schedule, priority = :priority, date = :date, user_id = :user_id WHERE schedule_id = :id";
         $this->db->query($update);
         $this->db->bind(':schedule', $schedule);
