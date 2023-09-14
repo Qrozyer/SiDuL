@@ -13,10 +13,20 @@ class Schedule extends Controller{
         }
     }
 
+    public function edit(){        
+        echo json_encode($this->load_model('schedules')->edit($_POST['id']));
+    }
+
     public function update(){                          
-        $this->view('templates/header');
-        $this->view('schedule/update');
-        $this->view('templates/footer');
+        if($this->load_model('schedules')->update($_POST) > 0){
+            Flasher::setFlash('success', 'Update Schedule', 'Success');
+            header("Location: " . BASEURL . "/home/index");
+            exit;
+        }else{
+            Flasher::setFlash('danger', 'Update Schedule', 'Failed');
+            header("Location: " . BASEURL . "/home/index");
+            exit;
+        }
     }
 
     public function delete($id){                          

@@ -29,13 +29,20 @@ class schedules {
         return $this->db->rowCount();
     }
 
+    public function edit($id){
+        $query = "SELECT * FROM $this->table WHERE schedule_id = :id";
+        $this->db->query($query);
+        $this->db->bind(':id', $id);
+        return $this->db->fetch();
+    }
+
     public function update($data){
-        $id = $data['id'];
+        $id = $data['schedule_id'];
         $schedule = $data['schedule'];
         $priority = $data['priority'];
         $date = $data['date'];
         $user_id = $data['user_id'];        
-        $update = "UPDATE $this->table SET schedule = :schedule, priority = :priority, date = :date, user_id = :user_id WHERE id = :id";
+        $update = "UPDATE $this->table SET schedule = :schedule, priority = :priority, date = :date, user_id = :user_id WHERE schedule_id = :id";
         $this->db->query($update);
         $this->db->bind(':schedule', $schedule);
         $this->db->bind(':priority', $priority);
