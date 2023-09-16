@@ -1,7 +1,7 @@
 <?php
-const BASEURL = "http://localhost:8080/SiDuL/public";
+const BASEURL = "http://localhost/github/SiDuL/public";
 const WEB_TITTLE = "SiDuL";
 const DB_HOST = "localhost";
-const DB_NAME = "SiDuL";
-const DB_USER = "qrozyer";
-const DB_PASS = "qrozyer111";
+const DB_NAME = "sidul";
+const DB_USER = "hfdzlvm";
+const DB_PASS = "sundatila12";

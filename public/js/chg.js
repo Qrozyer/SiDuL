@@ -8,12 +8,12 @@ $(function() {
     });
     $('.updateModal').on('click', function() {
         $('#formLabel').html('Update Schedule');
-        $('.modal-body form').attr('action', 'http://localhost:8080/SiDuL/public/schedule/update');
+        $('.modal-body form').attr('action', 'http://localhost/github/SiDuL/public/schedule/update');
 
         const id = $(this).data('id');
         
         $.ajax({
-            url: `http://localhost:8080/SiDuL/public/schedule/edit`,
+            url: `http://localhost//github/SiDuL/public/schedule/edit`,
             data: {id : id},
             method : 'post',
             dataType: 'json',
